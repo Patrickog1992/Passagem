@@ -55,9 +55,8 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
     setStep('processing');
     
     setTimeout(() => {
-      alert("Redirecionando para a revelação da Passagem Sagrada...");
-      onClose();
-      setStep('form');
+      // Redirecionamento para o checkout após a animação de conexão
+      window.location.href = "https://go.perfectpay.com.br/PPU38CQ63ME";
     }, 3000);
   };
   
