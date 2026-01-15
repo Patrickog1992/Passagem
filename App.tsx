@@ -3,6 +3,7 @@ import { TestimonialCarousel } from './components/TestimonialCarousel';
 import { FAQ } from './components/FAQ';
 import { CTAButton } from './components/CTAButton';
 import { CommitmentModal } from './components/CommitmentModal';
+import { SocialProofPopup } from './components/SocialProofPopup';
 
 const App: React.FC = () => {
   // Estado para controlar qual tela está visível
@@ -33,8 +34,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen font-poppins text-gray-200 selection:bg-purple-500 selection:text-white pb-20">
+    <div className="min-h-screen font-poppins text-gray-200 selection:bg-purple-500 selection:text-white pb-20 relative">
       
+      {/* Pop-up de Prova Social */}
+      <SocialProofPopup />
+
       {/* Top Bar */}
       <div className="bg-red-600 py-3 text-center text-xs md:text-sm font-bold tracking-wide text-white border-b border-red-800 shadow-lg">
         ⚠️ ATENÇÃO: As últimas vagas serão completadas no dia <span className="text-yellow-300">{today}</span> depois disso essa página irá sair do ar
