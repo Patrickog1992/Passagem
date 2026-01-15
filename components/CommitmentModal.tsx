@@ -72,31 +72,44 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0f0c1a] flex flex-col w-full h-full">
+    /* 
+      Container Principal: 
+      - fixed inset-0: Cobre toda a tela
+      - overflow-y-auto: Permite rolar o conteúdo do modal se for maior que a tela
+      - h-[100dvh]: Garante altura total correta em mobile
+      - bg-[#0f0c1a]: Cor de fundo
+    */
+    <div className="fixed inset-0 z-50 bg-[#0f0c1a] overflow-y-auto h-[100dvh] w-full">
       
-      {/* Header with Timer and Close Button */}
-      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 p-4 text-center border-b border-purple-500/30 flex-shrink-0 relative shadow-md">
-        
-        {/* Close Button */}
-        <button 
-          onClick={onClose} 
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-purple-300 hover:text-white transition-colors rounded-full hover:bg-purple-800/30"
-          aria-label="Fechar"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+      {/* Wrapper interno para estrutura */}
+      <div className="min-h-full flex flex-col relative">
 
-        <h3 className="text-xl font-bold text-white mb-1 px-8">Passo 1: Concorde com a Passagem Sagrada</h3>
-        <p className="text-red-400 font-mono text-sm font-bold animate-pulse">
-          Isso vai expirar em... {formatTime(timeLeft)}
-        </p>
-      </div>
+        {/* 
+          Header STICKY:
+          - sticky top-0: Cola no topo quando rola
+          - z-50: Fica acima do conteúdo
+        */}
+        <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-900 to-indigo-900 p-4 text-center border-b border-purple-500/30 shadow-xl">
+          
+          {/* Close Button */}
+          <button 
+            onClick={onClose} 
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-purple-300 hover:text-white transition-colors rounded-full hover:bg-purple-800/30"
+            aria-label="Fechar"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
-      {/* Main Content Area */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-8">
-        <div className="max-w-3xl mx-auto w-full"> {/* Container to prevent stretching too much on desktop */}
+          <h3 className="text-xl font-bold text-white mb-1 px-8">Passo 1: Concorde com a Passagem Sagrada</h3>
+          <p className="text-red-400 font-mono text-sm font-bold animate-pulse">
+            Isso vai expirar em... {formatTime(timeLeft)}
+          </p>
+        </div>
+
+        {/* Conteúdo do Formulário */}
+        <div className="p-4 md:p-8 flex-1 w-full max-w-3xl mx-auto">
           
           {step === 'form' ? (
             <div className="space-y-6 pb-10">
