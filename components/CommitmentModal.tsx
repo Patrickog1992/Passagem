@@ -25,9 +25,10 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
   const [check2, setCheck2] = useState(false);
   const [check3, setCheck3] = useState(false);
 
-  // Removido useEffect de scroll lock pois agora é uma página
-
   useEffect(() => {
+    // CORREÇÃO: Força a página a rolar para o topo imediatamente ao abrir este componente
+    window.scrollTo(0, 0);
+
     if (timeLeft === 0) setTimeLeft(120);
     
     const interval = setInterval(() => {
