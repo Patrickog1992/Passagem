@@ -26,7 +26,7 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
   const [check3, setCheck3] = useState(false);
 
   useEffect(() => {
-    // CORREÇÃO: Força a página a rolar para o topo imediatamente ao abrir este componente
+    // Força a página a rolar para o topo imediatamente ao abrir este componente
     window.scrollTo(0, 0);
 
     if (timeLeft === 0) setTimeLeft(120);
@@ -56,45 +56,38 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
     setStep('processing');
     
     setTimeout(() => {
-      // Redirecionamento para o checkout após a animação de conexão
       window.location.href = "https://go.perfectpay.com.br/PPU38CQ63ME";
     }, 3000);
   };
   
   if (!isOpen) return null;
 
-  // Removido 'fixed inset-0' e adicionado 'min-h-screen' para comportar como página normal
   return (
-    <div className="min-h-screen w-full bg-[#0f0c1a] flex flex-col font-poppins text-gray-200">
+    <div className="min-h-screen w-full bg-[#0f0c1a] flex flex-col font-poppins text-gray-200 relative">
       
-      {/* Header Fixo no topo da página */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-purple-900 to-indigo-900 p-4 text-center border-b border-purple-500/30 shadow-xl min-h-[80px] flex flex-col justify-center">
-          
-        {/* Close Button */}
-        <button 
-          onClick={onClose} 
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-purple-300 hover:text-white transition-colors rounded-full hover:bg-purple-800/30"
-          aria-label="Voltar"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+      {/* Botão de Fechar posicionado no canto superior esquerdo (Absoluto) */}
+      <button 
+        onClick={onClose} 
+        className="absolute left-4 top-4 z-50 p-2 text-gray-400 hover:text-white transition-colors"
+        aria-label="Voltar"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
 
-        {step === 'form' && (
-          <>
-            <h3 className="text-xl font-bold text-white mb-1 px-8">Passo 1: Concorde com a Passagem Sagrada</h3>
-            <p className="text-red-400 font-mono text-sm font-bold animate-pulse">
-              Isso vai expirar em... {formatTime(timeLeft)}
-            </p>
-          </>
-        )}
-      </div>
-
-      <div className="p-4 md:p-8 flex-1 w-full max-w-3xl mx-auto flex flex-col">
+      <div className="p-4 md:p-8 pt-16 flex-1 w-full max-w-3xl mx-auto flex flex-col">
         {step === 'form' ? (
           <div className="space-y-6 pb-10">
             
+            {/* Texto Estático "Passo 1" e Cronômetro (Inserido acima dos termos) */}
+            <div className="text-center mb-2">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Passo 1: Concorde com a Passagem Sagrada</h3>
+              <p className="text-red-500 font-bold text-sm animate-pulse tracking-wide">
+                Isso vai expirar em... {formatTime(timeLeft)}
+              </p>
+            </div>
+
             <div className="space-y-4 bg-purple-900/20 p-6 rounded-xl border border-purple-500/20 shadow-inner">
               <h4 className="text-purple-300 font-bold mb-2 uppercase tracking-wide text-sm">Termos de Compromisso</h4>
               
