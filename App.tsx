@@ -12,18 +12,22 @@ const App: React.FC = () => {
 
   const handleOpenModal = () => {
     setShowModal(true);
+    window.scrollTo(0, 0); // Garante que a nova "página" comece do topo
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    window.scrollTo(0, 0);
   };
+
+  // Se o modal estiver ativo, renderizamos APENAS ele, ocupando a tela toda como uma nova página.
+  if (showModal) {
+    return <CommitmentModal isOpen={showModal} onClose={handleCloseModal} />;
+  }
 
   return (
     <div className="min-h-screen font-poppins text-gray-200 selection:bg-purple-500 selection:text-white pb-20">
       
-      {/* Modal Component */}
-      <CommitmentModal isOpen={showModal} onClose={handleCloseModal} />
-
       {/* Top Bar */}
       <div className="bg-red-600 py-3 text-center text-xs md:text-sm font-bold tracking-wide text-white border-b border-red-800 shadow-lg">
         ⚠️ ATENÇÃO: As últimas vagas serão completadas no dia <span className="text-yellow-300">{today}</span> depois disso essa página irá sair do ar
