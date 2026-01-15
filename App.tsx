@@ -5,24 +5,31 @@ import { CTAButton } from './components/CTAButton';
 import { CommitmentModal } from './components/CommitmentModal';
 
 const App: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
+  // Estado para controlar qual tela está visível
+  // false = Landing Page (Carta de Vendas)
+  // true = Tela da Passagem Sagrada (Formulário)
+  const [showPassageScreen, setShowPassageScreen] = useState(false);
   
   // Data de hoje para o aviso de escassez
   const today = new Date().toLocaleDateString('pt-BR');
 
-  const handleOpenModal = () => {
-    setShowModal(true);
-    window.scrollTo(0, 0); // Garante que a nova "página" comece do topo
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const handleOpenPassage = () => {
+    // Troca para a tela do formulário e rola para o topo
+    setShowPassageScreen(true);
     window.scrollTo(0, 0);
   };
 
-  // Se o modal estiver ativo, renderizamos APENAS ele, ocupando a tela toda como uma nova página.
-  if (showModal) {
-    return <CommitmentModal isOpen={showModal} onClose={handleCloseModal} />;
+  const handleClosePassage = () => {
+    // Volta para a landing page e rola para o topo
+    setShowPassageScreen(false);
+    window.scrollTo(0, 0);
+  };
+
+  // RENDERIZAÇÃO CONDICIONAL:
+  // Se showPassageScreen for verdadeiro, retornamos APENAS o componente do formulário.
+  // Isso substitui visualmente toda a página anterior, funcionando como uma "nova página" dentro do mesmo site.
+  if (showPassageScreen) {
+    return <CommitmentModal isOpen={true} onClose={handleClosePassage} />;
   }
 
   return (
@@ -361,7 +368,7 @@ const App: React.FC = () => {
             <p className="mb-6 font-semibold">Se você concorda com essas condições, e está pronta para reivindicar esse poder…</p>
             <p className="mb-4">Clique no botão “Receber Minha Passagem” abaixo</p>
 
-            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenModal} />
+            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </div>
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
@@ -385,7 +392,7 @@ const App: React.FC = () => {
             
             <p className="mt-8">Receba sua Passagem Sagrada aqui:</p>
             
-            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenModal} />
+            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </section>
 
         <section className="mt-16 mb-12">
@@ -394,7 +401,7 @@ const App: React.FC = () => {
             <div className="text-center mt-8 italic text-amber-200 text-lg">
                 “O poder é real. E uma vez que ele toma conta… não há como voltar.”
             </div>
-            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenModal} />
+            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </section>
 
         <section className="bg-gray-800/50 rounded-xl p-6 md:p-8 space-y-8 border border-gray-700">
@@ -446,14 +453,14 @@ const App: React.FC = () => {
             <p>Se você está cansada de ser bloqueada, ignorada ou substituída — agora é a hora de agir. Tome controle do coração dele para sempre.</p>
             <p>Não apenas fazendo ele voltar — mas tornando impossível que ele vá embora novamente.</p>
             
-            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenModal} />
+            <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </section>
 
         <section className="my-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">Perguntas Frequentes</h2>
             <FAQ />
             <div className="mt-12">
-                 <CTAButton mainText="Receber Minha Passagem Sagrada" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenModal} />
+                 <CTAButton mainText="Receber Minha Passagem Sagrada" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
             </div>
         </section>
 
