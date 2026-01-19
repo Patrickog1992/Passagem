@@ -14,8 +14,7 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
   const [hisName, setHisName] = useState('');
   
   // Ritual States
-  const [ritualStatus, setRitualStatus] = useState<'idle' | 'scanning' | 'complete'>('idle');
-  const [scanProgress, setScanProgress] = useState(0);
+  const [isUnlocked, setIsUnlocked] = useState(false);
 
   // Checkboxes
   const [check1, setCheck1] = useState(false);
@@ -48,21 +47,8 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  const handleStartRitual = () => {
-    if (!yourName || !hisName) return;
-    
-    setRitualStatus('scanning');
-    let progress = 0;
-    
-    const interval = setInterval(() => {
-      progress += 2; // Velocidade do carregamento
-      setScanProgress(progress);
-      
-      if (progress >= 100) {
-        clearInterval(interval);
-        setRitualStatus('complete');
-      }
-    }, 50); // Ajuste para duração total de ~2.5s
+  const handleUnlock = () => {
+    setIsUnlocked(true);
   };
 
   const handleContinue = () => {
@@ -70,11 +56,6 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
     window.location.href = "https://go.perfectpay.com.br/PPU38CQ63ME";
   };
   
-  const getInitials = (name: string) => {
-    if (!name) return "?";
-    return name.charAt(0).toUpperCase();
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -183,143 +164,65 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
                 </div>
               </div>
 
-              {/* ÁREA DO RITUAL DE CONEXÃO (Substituindo Signos) */}
+              {/* CHAVE MÍSTICA - NOVA ÁREA */}
               <div className="border-t border-gray-800 pt-6 mt-4">
-                <div className="bg-[#0f0c1a] border border-purple-500/30 rounded-xl p-6 relative overflow-hidden min-h-[250px] flex flex-col items-center justify-center">
+                <div 
+                  onClick={!isUnlocked ? handleUnlock : undefined}
+                  className="bg-[#0f0c1a] border border-purple-500/30 rounded-xl p-8 relative overflow-hidden min-h-[250px] flex flex-col items-center justify-center cursor-pointer group transition-all duration-300 hover:border-purple-500/60"
+                >
                   
                   {/* Fundo Místico Animado */}
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 animate-pulse"></div>
                   
-                  {/* Título do Ritual */}
-                  <h4 className={`text-center font-bold uppercase tracking-widest mb-6 transition-colors duration-500 relative z-10 ${ritualStatus === 'complete' ? 'text-green-400' : 'text-purple-400'}`}>
-                    {ritualStatus === 'idle' && "Sincronização de Almas Necessária"}
-                    {ritualStatus === 'scanning' && "Buscando Rastro Energético..."}
-                    {ritualStatus === 'complete' && "✨ CONEXÃO DE OBSESSÃO ENCONTRADA ✨"}
+                  {/* Título */}
+                  <h4 className="text-center font-bold uppercase tracking-widest mb-8 text-amber-500 relative z-10">
+                    6. CHAVE MÍSTICA
                   </h4>
 
-                  {/* Orbes de Energia */}
-                  <div className="flex items-center justify-center gap-4 md:gap-12 relative z-10 w-full">
-                    
-                    {/* Orbe Dela */}
-                    <div className="flex flex-col items-center gap-2">
-                       <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-2xl font-bold border-2 transition-all duration-700 shadow-[0_0_20px_rgba(139,92,246,0.3)]
-                         ${ritualStatus === 'complete' 
-                            ? 'bg-gradient-to-br from-red-600 to-pink-600 border-red-400 text-white shadow-[0_0_30px_rgba(239,68,68,0.6)]' 
-                            : 'bg-gradient-to-br from-purple-900 to-indigo-900 border-purple-500 text-purple-200'
-                         }
-                         ${ritualStatus === 'scanning' ? 'animate-pulse scale-110' : ''}
-                       `}>
-                          {getInitials(yourName)}
-                       </div>
-                       <span className="text-xs text-gray-400 uppercase tracking-wide">Você</span>
+                  {!isUnlocked ? (
+                    <div className="flex flex-col items-center justify-center relative z-10">
+                      {/* Chave Flutuante */}
+                      <div className="text-7xl md:text-8xl mb-6 animate-pulse-slow filter drop-shadow-[0_0_15px_rgba(245,158,11,0.4)] transform group-hover:scale-110 transition-transform duration-500">
+                        🔑
+                      </div>
+                      <p className="text-gray-300 animate-pulse text-sm md:text-base font-medium tracking-wide">
+                        Toque na chave para desbloquear a conexão
+                      </p>
                     </div>
-
-                    {/* Conector Central */}
-                    <div className="flex-1 max-w-[100px] flex flex-col items-center justify-center relative h-10">
-                        {ritualStatus === 'idle' && (
-                           <div className="h-0.5 w-full bg-gray-800"></div>
-                        )}
-                        
-                        {ritualStatus === 'scanning' && (
-                           <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden relative">
-                              <div className="absolute top-0 left-0 h-full bg-purple-500 shadow-[0_0_10px_#a855f7]" style={{ width: `${scanProgress}%` }}></div>
-                           </div>
-                        )}
-
-                        {ritualStatus === 'complete' && (
-                           <div className="h-1 w-full bg-gradient-to-r from-red-500 via-pink-500 to-red-500 animate-pulse shadow-[0_0_15px_rgba(236,72,153,0.8)]"></div>
-                        )}
-                        
-                        {/* Ícone de Cadeado/Conexão */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0f0c1a] p-1 rounded-full">
-                           {ritualStatus === 'complete' ? (
-                             <span className="text-green-500 text-xl animate-bounce">🔓</span>
-                           ) : (
-                             <span className="text-gray-600 text-xl">🔒</span>
-                           )}
+                  ) : (
+                    <div className="flex flex-col items-center justify-center relative z-10">
+                      {/* Coração Pulsante */}
+                      <div className="relative mb-6">
+                        <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full animate-ping"></div>
+                        <div className="absolute inset-0 bg-pink-500/30 blur-2xl rounded-full animate-pulse"></div>
+                        <div className="text-7xl md:text-8xl relative z-10 animate-bounce text-red-500 drop-shadow-[0_0_35px_rgba(239,68,68,0.8)]">
+                          ❤️‍🔥
                         </div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-white/10 blur-md rotate-45 scale-150 animate-pulse">✨</div>
+                      </div>
+                      <p className="text-red-400 font-bold tracking-widest uppercase text-lg animate-pulse drop-shadow-md">
+                        Portal liberado.
+                      </p>
                     </div>
-
-                    {/* Orbe Dele */}
-                    <div className="flex flex-col items-center gap-2">
-                       <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-2xl font-bold border-2 transition-all duration-700 shadow-[0_0_20px_rgba(139,92,246,0.3)]
-                         ${ritualStatus === 'complete' 
-                            ? 'bg-gradient-to-br from-red-600 to-pink-600 border-red-400 text-white shadow-[0_0_30px_rgba(239,68,68,0.6)]' 
-                            : 'bg-gradient-to-br from-purple-900 to-indigo-900 border-purple-500 text-purple-200'
-                         }
-                         ${ritualStatus === 'scanning' ? 'animate-pulse scale-110 delay-150' : ''}
-                       `}>
-                          {getInitials(hisName)}
-                       </div>
-                       <span className="text-xs text-gray-400 uppercase tracking-wide">Ele</span>
-                    </div>
-
-                  </div>
-
-                  {/* Botão de Ação do Ritual */}
-                  <div className="mt-8 relative z-10">
-                    {ritualStatus === 'idle' && (
-                      <button
-                        onClick={handleStartRitual}
-                        disabled={!yourName || !hisName}
-                        className={`px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm transition-all transform
-                          ${(!yourName || !hisName) 
-                            ? 'bg-gray-800 text-gray-500 cursor-not-allowed' 
-                            : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.5)] animate-pulse'
-                          }
-                        `}
-                      >
-                        {(!yourName || !hisName) ? 'Preencha os nomes acima' : 'Clique aqui e sincronize as energias agora'}
-                      </button>
-                    )}
-
-                    {ritualStatus === 'scanning' && (
-                       <p className="text-purple-300 font-mono text-sm animate-pulse">Analisando vibração espiritual... {scanProgress}%</p>
-                    )}
-
-                    {ritualStatus === 'complete' && (
-                       <p className="text-green-400 font-bold text-sm bg-green-900/20 px-4 py-2 rounded border border-green-500/30">
-                          A alma dele está aberta para receber sua Passagem.
-                       </p>
-                    )}
-                  </div>
+                  )}
 
                 </div>
               </div>
             </div>
 
             <div className="pt-4">
-              {ritualStatus === 'complete' ? (
-                <button 
-                  onClick={handleContinue}
-                  className="w-full py-5 rounded-xl font-bold text-xl uppercase tracking-wider transition-all shadow-lg transform active:scale-95 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-green-900/50 animate-pulse-slow ring-2 ring-green-400 ring-offset-2 ring-offset-[#0f0c1a]"
-                >
-                  Confirmar Passagem
-                </button>
-              ) : (
-                <button 
-                  disabled
-                  className="w-full py-5 rounded-xl font-bold text-xl uppercase tracking-wider bg-gray-800 text-gray-500 cursor-not-allowed border border-gray-700"
-                >
-                  {ritualStatus === 'idle' ? 'Realize o Ritual Acima Primeiro' : 'Aguarde a Sincronização...'}
-                </button>
-              )}
+              <button 
+                onClick={handleContinue}
+                className="w-full py-5 rounded-xl font-bold text-xl uppercase tracking-wider transition-all shadow-lg transform active:scale-95 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-green-900/50 animate-pulse-slow ring-2 ring-green-400 ring-offset-2 ring-offset-[#0f0c1a]"
+              >
+                Confirmar Passagem
+              </button>
             </div>
 
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center space-y-8 text-center h-full min-h-[50vh] flex-1">
-            <div className="relative">
-              <div className="w-24 h-24 border-4 border-purple-500/30 rounded-full"></div>
-              <div className="w-24 h-24 border-4 border-purple-500 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl">
-                🔮
-              </div>
-            </div>
-            <div className="space-y-4 max-w-md">
-              <h3 className="text-2xl font-bold text-white">Preparando sua Passagem...</h3>
-              <p className="text-gray-400 text-lg">Não feche essa página. Madame Alaia está selando o ritual.</p>
-            </div>
+             {/* Estado de loading removido conforme pedido anterior, mas mantido o fallback caso o state mude */}
           </div>
         )}
       </div>
