@@ -66,11 +66,8 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
   };
 
   const handleContinue = () => {
-    setStep('processing');
-    
-    setTimeout(() => {
-      window.location.href = "https://go.perfectpay.com.br/PPU38CQ63ME";
-    }, 3000);
+    // Redireciona direto para o checkout sem loading
+    window.location.href = "https://go.perfectpay.com.br/PPU38CQ63ME";
   };
   
   const getInitials = (name: string) => {
@@ -164,7 +161,7 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
               {/* Inputs de Nome */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-base font-bold text-purple-300 mb-2">Seu nome completo</label>
+                  <label className="block text-base font-bold text-purple-300 mb-2">Seu nome</label>
                   <input 
                     type="text" 
                     value={yourName}
@@ -272,7 +269,7 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
                           }
                         `}
                       >
-                        {(!yourName || !hisName) ? 'Preencha os nomes acima' : 'Sincronizar Energias Agora'}
+                        {(!yourName || !hisName) ? 'Preencha os nomes acima' : 'Clique aqui e sincronize as energias agora'}
                       </button>
                     )}
 
