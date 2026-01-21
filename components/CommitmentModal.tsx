@@ -191,52 +191,35 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center relative z-10 w-full">
-                      {/* Coração Bem Feito em SVG */}
+                      {/* Coração Bem Feito em SVG - Sem Fogo */}
                       <div className="relative mb-4 w-32 h-32 flex items-center justify-center">
                         
-                        {/* Brilho Atmosférico */}
-                        <div className="absolute w-40 h-40 bg-red-600/40 blur-[50px] rounded-full animate-pulse"></div>
-                        
-                        {/* Fogo Atrás (SVG) */}
-                        <div className="absolute -top-6 left-0 right-0 flex justify-center mix-blend-screen opacity-90">
-                           <svg viewBox="0 0 24 24" className="w-24 h-24 text-amber-500 animate-[bounce_1.5s_infinite] origin-bottom">
-                                <path fill="url(#flameGrad)" d="M12 2c-4 5-7 7-7 11 0 4 3 7 7 7s7-3 7-7c0-4-3-6-7-11zm0 16c-2 0-3-2-3-4 0-2 2-3 3-5 1 2 3 3 3 5 0 2-1 4-3 4z" />
-                                <defs>
-                                    <linearGradient id="flameGrad" x1="0" y1="1" x2="0" y2="0">
-                                        <stop offset="0%" stopColor="#ef4444" />
-                                        <stop offset="100%" stopColor="#fbbf24" />
-                                    </linearGradient>
-                                </defs>
-                           </svg>
-                        </div>
-
                         {/* Coração SVG */}
-                        <svg viewBox="0 0 24 24" className="w-full h-full relative z-10 drop-shadow-[0_0_15px_rgba(220,38,38,0.9)] animate-[pulse_2s_ease-in-out_infinite]">
+                        <svg viewBox="0 0 24 24" className="w-full h-full relative z-10 drop-shadow-[0_0_20px_rgba(239,68,68,0.6)] animate-[pulse_2s_ease-in-out_infinite]">
                           <defs>
                             <linearGradient id="heartGrad" x1="0" y1="0" x2="0" y2="1">
                               <stop offset="0%" stopColor="#ef4444" /> {/* Red 500 */}
-                              <stop offset="100%" stopColor="#7f1d1d" /> {/* Red 900 */}
+                              <stop offset="100%" stopColor="#991b1b" /> {/* Red 800 */}
                             </linearGradient>
-                            <radialGradient id="innerGlow" cx="0.5" cy="0.5" r="0.5">
-                                <stop offset="0%" stopColor="#fca5a5" stopOpacity="0.8" />
-                                <stop offset="100%" stopColor="#ef4444" stopOpacity="0" />
-                            </radialGradient>
                           </defs>
                           {/* Heart Shape */}
                           <path 
                             fill="url(#heartGrad)" 
-                            stroke="#b91c1c"
+                            stroke="#7f1d1d"
                             strokeWidth="0.5"
                             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
                           />
                           {/* Inner Shine/Reflex */}
-                          <ellipse cx="8" cy="7" rx="2" ry="3" fill="white" opacity="0.15" transform="rotate(-15 8 7)" />
+                          <path
+                            d="M6 7 C 6 4, 9 4, 9 7"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            opacity="0.3"
+                            fill="none"
+                            transform="translate(0.5, 0.5)"
+                          />
                         </svg>
-
-                        {/* Fogo Interno/Glow (Div) */}
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div className="w-full h-full bg-gradient-to-t from-yellow-500/20 to-transparent blur-md rounded-full animate-pulse"></div>
-                        </div>
 
                       </div>
 
