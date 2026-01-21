@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react';
 
 const testimonials = [
   {
-    name: "Fernanda S.",
-    location: "São Paulo, SP",
-    text: "Gente, eu não acreditava nessas coisas, sério. Mas depois de 3 dias que eu falei a frase, ele me desbloqueou e mandou flores. Tô em choque até agora!",
+    name: "Carla R.",
+    location: "Belo Horizonte, MG",
+    text: "A sensação de poder é inexplicável. Tudo mudou completamente. Valeu cada centavo, recomendo demais pra quem está sofrendo.",
     rating: 5,
-    image: "https://i.imgur.com/Egm2wH7.jpg",
-    likes: 423
+    image: "https://i.imgur.com/sqYjS4V.png",
+    likes: 215
+  },
+  {
+    name: "Fernando M.",
+    location: "Campinas, SP",
+    text: "Eu não acreditava muito, mas resolvi tentar. Em poucos dias a situação virou completamente. Hoje estou vivendo algo que achei que nunca mais ia acontecer.",
+    rating: 5,
+    image: "https://i.imgur.com/tT8rjKC.jpeg", 
+    likes: 187
   },
   {
     name: "Juliana M.",
@@ -16,14 +24,6 @@ const testimonials = [
     rating: 5,
     image: "https://i.imgur.com/nCdT1tV.jpg",
     likes: 891
-  },
-  {
-    name: "Carla R.",
-    location: "Belo Horizonte, MG",
-    text: "A sensação de poder é inexplicável. Ele fica igual um cachorrinho atrás. Valeu cada centavo, recomendo demais pra quem tá sofrendo.",
-    rating: 5,
-    image: "https://i.imgur.com/sqYjS4V.png",
-    likes: 215
   },
   {
     name: "Patrícia L.",

@@ -27,8 +27,6 @@ const App: React.FC = () => {
   };
 
   // RENDERIZAÇÃO CONDICIONAL:
-  // Se showPassageScreen for verdadeiro, retornamos APENAS o componente do formulário.
-  // Isso substitui visualmente toda a página anterior, funcionando como uma "nova página" dentro do mesmo site.
   if (showPassageScreen) {
     return <CommitmentModal isOpen={true} onClose={handleClosePassage} />;
   }
@@ -49,34 +47,41 @@ const App: React.FC = () => {
         {/* Headline Section */}
         <section className="text-center space-y-6">
           <p className="text-purple-400 font-bold uppercase tracking-widest text-sm md:text-base">
-            Madame Alaia vai PRESENTEAR 3333 mulheres com poder total
-            sobre o homem que elas escolherem
+            Madame Alaia vai PRESENTEAR 3333 pessoas com poder total para trazer de volta um amor perdido — ou atrair um novo amor verdadeiro para suas vidas
           </p>
 
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">
             <span className="text-amber-400 block mb-2 text-xl md:text-2xl font-semibold">Encantadora do Amor Revela:</span>
-            Esta Frase Sagrada, Quando
-            Repetida à Meia-Noite, Faz Ele
+            Esta Frase Sagrada, Quando Repetida à Meia-Noite, Faz Ele(a)
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-pink-600 block mt-2">
-              FICAR COMPLETAMENTE OBCECADO Por Você
+              FICAR COMPLETAMENTE OBCECADO(A) Por Você
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 italic font-light border-l-4 border-amber-500 pl-4 text-left md:text-center md:border-l-0 md:border-b-4 md:pb-4 md:border-amber-500/50">
-            Isso funciona mesmo que haja outra mulher na história... Mesmo que ele esteja distante... E mesmo que ele não esteja “pronto” para compromisso.
-          </p>
+          <div className="border-l-4 border-amber-500 pl-4 text-left md:text-center md:border-l-0 md:border-b-4 md:pb-4 md:border-amber-500/50">
+            <p className="text-lg md:text-xl text-gray-300 italic font-light mb-4">
+              Isso funciona mesmo que haja outra pessoa na história... Mesmo que ele(a) esteja distante... E mesmo que não esteja “pronto(a)” para compromisso. E também funciona se você ainda não tem ninguém específico em mente e deseja atrair um novo amor verdadeiro para sua vida.
+            </p>
+            
+            {/* Frase de Destaque Inclusiva */}
+            <div className="mt-6 flex justify-center">
+              <p className="text-sm md:text-base font-bold text-amber-300 uppercase tracking-widest bg-purple-900/40 inline-block px-4 py-2 rounded-lg border border-amber-500/30 shadow-[0_0_15px_rgba(217,119,6,0.2)]">
+                ESSE FEITIÇO FUNCIONA INDEPENDENTE DO SEU GÊNERO
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Warning Box */}
         <div className="bg-red-900/20 border-2 border-red-600/50 rounded-lg p-6 md:p-8 my-10 shadow-lg">
-          <p className="font-bold text-red-400 mb-4 text-lg">Querida Irmã,</p>
+          <p className="font-bold text-red-400 mb-4 text-lg">Querida Irmã, Querido Irmão,</p>
           <div className="space-y-4 text-gray-200">
             <p>O que estou prestes a compartilhar é perigoso nas mãos erradas.</p>
             <p>Tenha cuidado com quem você usa isso.</p>
-            <p className="font-bold text-white bg-red-600/20 inline-block px-1">Se você não está pronta para que ele fique COMPLETAMENTE OBCECADO…</p>
+            <p className="font-bold text-white bg-red-600/20 inline-block px-1">Se você não está pronto(a) para que ele(a) fique COMPLETAMENTE OBCECADO(A)…</p>
             <p className="uppercase font-bold tracking-wide">Então pare de ler agora.</p>
-            <p>Porque, uma vez que você sussurrar essas palavras 4 vezes à meia-noite, ele ficará ligado a você até o fim.</p>
-            <p>Você NÃO conseguirá se livrar dele.</p>
+            <p>Porque, uma vez que você sussurrar essas palavras 4 vezes à meia-noite, ele(a) ficará ligado(a) a você até o fim.</p>
+            <p>Você NÃO conseguirá se livrar dele(a).</p>
           </div>
         </div>
 
@@ -86,10 +91,10 @@ const App: React.FC = () => {
             Isso não é um feitiço fofo de amor. Isso é conhecimento proibido — uma força tão poderosa que, uma vez usada, não há como voltar atrás.
           </p>
           <p>
-            É a história de como o homem que me bloqueou, me ignorou e agiu como se eu nunca tivesse existido…
+            É a história de como a pessoa que me bloqueou, me ignorou e agiu como se eu nunca tivesse existido…
           </p>
           <p>
-            Acabou estacionado em frente à minha casa à meia-noite, me ligando 47 vezes seguidas, implorando e jurando que faria qualquer coisa só para me ter de volta.
+            Acabou estacionada em frente à minha casa à meia-noite, me ligando 47 vezes seguidas, implorando e jurando que faria qualquer coisa só para me ter de volta.
           </p>
           <p>Eu não implorei. Não chorei.</p>
           <p>Não mandei uma mensagem de “estou com saudade”.</p>
@@ -102,13 +107,13 @@ const App: React.FC = () => {
           <ul className="list-disc pl-6 space-y-2 text-purple-200">
             <li>47 ligações.</li>
             <li>Dezenas de mensagens.</li>
-            <li>Correio de voz atrás de correio de voz dele chorando, implorando, suplicando para voltar comigo.</li>
+            <li>Correio de voz atrás de correio de voz chorando, implorando, suplicando para voltar comigo.</li>
           </ul>
 
-          <p>Era como se algo tivesse se quebrado dentro dele. Uma FOME tão intensa que o consumia.</p>
-          <p>Uma OBSESSÃO que fez toda outra mulher DESAPARECER.</p>
-          <p>Um DESEJO inabalável por mim repetindo na mente dele como um vício.</p>
-          <p>E de repente — esse homem que me tratava como NADA — estava RASTEJANDO DE VOLTA.</p>
+          <p>Era como se algo tivesse se quebrado dentro daquela pessoa. Uma FOME tão intensa que consumia.</p>
+          <p>Uma OBSESSÃO que fez qualquer outra pessoa DESAPARECER.</p>
+          <p>Um DESEJO inabalável repetindo na mente como um vício.</p>
+          <p>E de repente — quem me tratava como NADA — estava RASTEJANDO DE VOLTA.</p>
         </section>
 
         <hr className="border-gray-800 my-8" />
@@ -134,8 +139,8 @@ const App: React.FC = () => {
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
           <p>Meu nome é Lorraine.</p>
-          <p>E eu provavelmente deveria ter vergonha de compartilhar esta história. Mas depois de ver quantas mulheres estão passando pelo mesmo inferno que eu passei… não posso ficar em silêncio.</p>
-          <p>Tudo começou há três meses. A noite em que ele me bloqueou.</p>
+          <p>E eu provavelmente deveria ter vergonha de compartilhar esta história. Mas depois de ver quantas pessoas estão passando pelo mesmo inferno que eu passei… não posso ficar em silêncio.</p>
+          <p>Tudo começou há três meses. A noite em que fui bloqueada.</p>
           <p>Não apenas meu número. Tudo. Instagram. Facebook. E-mail.</p>
           <p>Como se eu nunca tivesse existido.</p>
           <p>Como se os últimos 8 meses não significassem nada.</p>
@@ -200,44 +205,44 @@ const App: React.FC = () => {
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
           <p>A celebração foi realizada perto da praia, no fundo do Cristo Redentor. O tipo de lugar onde tradições antigas ainda vivem, onde segredos ainda são guardados.</p>
-          <p>Eu estava tentando me esconder em um canto, checando meu telefone pela centésima vez para ver se o Gustavo tinha me desbloqueado, quando senti alguém me observando.</p>
+          <p>Eu estava tentando me esconder em um canto, checando meu telefone pela centésima vez para ver se a pessoa que eu amava tinha me desbloqueado, quando senti alguém me observando.</p>
           <p>Ela se movia como uma sombra. Elegante. Atemporal. Sarah havia mencionado sua tia-avó, Madame Alaia, mas não tinha dito muito mais. Apenas que ela era… diferente.</p>
           <p>Agora eu entendia por quê.</p>
-          <p className="text-amber-400 italic">“O nome dele é Gustavo, não é?” ela disse suavemente.</p>
-          <p>Minha cabeça se ergueu de repente. Eu não tinha contado a ninguém ali sobre ele.</p>
-          <p>“A dor do amor bloqueado deixa marcas que apenas alguns conseguem ver”, ela continuou, seu sotaque carregado, mas seu inglês perfeito. “Passei minha vida estudando essas coisas.”</p>
+          <p className="text-amber-400 italic">“O nome da pessoa que ocupa o seu coração não sai da sua mente, não é?” ela disse suavemente.</p>
+          <p>Minha cabeça se ergueu de repente. Eu não tinha contado a ninguém ali sobre aquilo.</p>
+          <p>“A dor do amor bloqueado deixa marcas que apenas alguns conseguem ver”, ela continuou, seu sotaque carregado, mas seu inglês perfeito. “Passei minha vida estudando essas conexões.”</p>
           <p>Tentei rir e desconversar, mas ela tocou minha mão e tudo ficou imóvel.</p>
           <p>Foi quando as palavras de Sara mais cedo fizeram sentido. Sobre como sua tia-avó Madame Alaia não era apenas uma parente qualquer — ela era uma das últimas encantadoras do exterior.</p>
-          <p className="font-bold text-white">Uma guardiã de segredos antigos passados por gerações de mulheres.</p>
-          <p>“Nessas montanhas”, ela disse, “guardamos segredos antigos. Conhecimentos transmitidos pelo sangue. Sobre encantamentos que podem perfurar a alma de um homem. Fazer ele lembrar do que o coração dele já sabe.”</p>
-          <p>“Todo homem tem sua própria Passagem Sagrada”, ela continuou.</p>
-          <p className="bg-purple-900/40 p-2 rounded">“Palavras específicas que, quando faladas, despertam algo primitivo. Algo que ele não consegue lutar contra.”</p>
+          <p className="font-bold text-white">Uma guardiã de segredos antigos passados por gerações.</p>
+          <p>“Nessas montanhas”, ela disse, “guardamos segredos antigos. Conhecimentos transmitidos pelo sangue. Sobre encantamentos que podem perfurar a alma de uma pessoa. Fazer ela lembrar do que o coração já sabe.”</p>
+          <p>“Cada pessoa tem sua própria Passagem Sagrada”, ela continuou.</p>
+          <p className="bg-purple-900/40 p-2 rounded">“Palavras específicas que, quando faladas, despertam algo primitivo. Algo que ninguém consegue lutar contra.”</p>
           <p>Revirei os olhos. “Olha, eu agradeço o que você está tentando fazer, mas…”</p>
           <p>“Verifique seu telefone”, ela interrompeu.</p>
           <p>“O quê?”</p>
           <p>“Verifique. Seu. Telefone.”</p>
           <p>Com as mãos levemente tremendo, eu peguei o celular.</p>
-          <p className="font-bold text-green-400">Três novas notificações. Todas de Gustavo. Em um aplicativo no qual ele havia me bloqueado apenas algumas horas antes.</p>
+          <p className="font-bold text-green-400">Três novas notificações. Todas da mesma pessoa. Em um aplicativo no qual eu havia sido bloqueada apenas algumas horas antes.</p>
           <p>Meu coração parou.</p>
-          <p>“Isso é apenas uma amostra”, ela disse suavemente. “Uma fração do que é possível quando você conhece as palavras certas. A Passagem Sagrada dele.”</p>
+          <p>“Isso é apenas uma amostra”, ela disse suavemente. “Uma fração do que é possível quando você conhece as palavras certas. A Passagem Sagrada dessa conexão.”</p>
         </section>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white mt-12 mb-6">O Que Ela Revelou Depois Mudou Tudo</h2>
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
-          <p>Ela explicou como cada Passagem Sagrada era diferente. Pessoal. Escolhida especificamente para o homem e a situação.</p>
+          <p>Ela explicou como cada Passagem Sagrada era diferente. Pessoal. Escolhida especificamente para cada pessoa e para cada situação.</p>
           <p>Como usar a passagem errada não faria nada. Mas a certa? Era como girar uma chave em uma fechadura que sempre esteve ali.</p>
-          <p>“Você está pronta para conhecer a dele?” ela perguntou.</p>
+          <p>“Você está pronta para conhecer a sua?” ela perguntou.</p>
           <p>Eu hesitei. Isso era loucura. Eu estava em uma reunião de família, conversando com alguém que eu tinha acabado de conhecer sobre algum ritual místico…</p>
-          <p>Outra notificação acendeu na tela do meu telefone. Gustavo novamente.</p>
+          <p>Outra notificação acendeu na tela do meu telefone. A mesma pessoa novamente.</p>
           <p>“Sim”, eu sussurrei.</p>
-          <p>Ela revelou a Passagem Sagrada dele naquela noite. Palavras que eu nunca tinha ouvido antes. Palavras que pareciam pulsar com sua própria energia.</p>
+          <p>Ela revelou a Passagem Sagrada naquela noite. Palavras que eu nunca tinha ouvido antes. Palavras que pareciam pulsar com sua própria energia.</p>
           <p>Eu as falei exatamente como ela instruiu, e então tentei esquecer tudo aquilo.</p>
           <p>Tentei me convencer de que eu não tinha acabado de participar de algum ritual antigo no canto de uma festa de família.</p>
           <p>Mas às 3:47 da manhã, meu telefone explodiu.</p>
           
           <div className="pl-4 border-l-2 border-green-500 space-y-4 my-6">
-            <p>Uma mensagem. Dele.</p>
+            <p>Uma mensagem. Daquela pessoa.</p>
             <p className="bg-gray-800 inline-block px-3 py-1 rounded-full text-sm">“Não consigo parar de pensar em você.”</p>
             <p>Meu coração disparou. Mas eu não respondi.</p>
             <p>Outro alerta.</p>
@@ -288,9 +293,9 @@ const App: React.FC = () => {
           <p>“Por séculos, minha família guardou essas passagens”, ela disse. “Passadas por gerações de mulheres. Mas eu sou a última. A última que consegue ver as palavras únicas de cada pessoa.”</p>
           <p>Ela tocou minha mão novamente. “Meu tempo está acabando. E quando eu partir, esse conhecimento vai comigo.”</p>
           <p>“A menos que…”</p>
-          <p className="font-bold text-white">Ela explicou seu último desejo: ajudar 3.333 mulheres a encontrar suas próprias Passagens Sagradas antes de partir. Para garantir que esse poder não seja perdido para sempre.</p>
+          <p className="font-bold text-white">Ela explicou seu último desejo: ajudar 3.333 pessoas a encontrarem suas próprias Passagens Sagradas antes de partir. Para garantir que esse poder não seja perdido para sempre.</p>
           <p>Não a minha passagem — isso não funcionaria para você.</p>
-          <p>Mas as suas próprias palavras específicas. Escolhidas para sua situação. Para o seu homem.</p>
+          <p>Mas as suas próprias palavras específicas. Escolhidas para sua situação. Para a pessoa que você deseja.</p>
         </section>
 
         <div className="bg-red-900/30 border border-red-500 rounded p-6 my-8">
@@ -298,10 +303,10 @@ const App: React.FC = () => {
             <div className="space-y-4 text-gray-200">
                 <p>Isso não é para todo mundo.</p>
                 <p>Se você só quer algo casual… procure outra coisa.</p>
-                <p>Se você não está pronta para devoção completa… pare de ler.</p>
+                <p>Se você não está pronto(a) para devoção completa… pare de ler.</p>
                 <p>Porque, uma vez que você fale sua Passagem Sagrada?</p>
                 <p className="font-bold">Não há como voltar atrás.</p>
-                <p>Ele ficará obcecado. Ele irá persegui-la incansavelmente. Ele nunca conseguirá ir embora.</p>
+                <p>Essa pessoa ficará obcecada. Ela irá persegui-lo(a) incansavelmente. Ela nunca conseguirá ir embora.</p>
                 <p>Então, antes de continuar…</p>
                 <p className="uppercase tracking-wide font-bold">Tenha absoluta certeza de que é isso que você quer.</p>
             </div>
@@ -311,26 +316,26 @@ const App: React.FC = () => {
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300 text-center">
             <p>Agora, você pode receber sua própria Passagem Sagrada…</p>
-            <p>A que foi feita especificamente para ele…</p>
-            <p>Aquele que ainda não sabe que é seu…</p>
+            <p>A que foi feita especificamente para aquela pessoa…</p>
+            <p>Aquela pessoa que ainda não sabe que é sua…</p>
             <div className="space-y-2 font-medium text-white">
-                <p>Não importa se ele te bloqueou…</p>
-                <p>Não importa se ele está com outra mulher…</p>
-                <p>Não importa se ele jura que nunca vai voltar…</p>
+                <p>Não importa se essa pessoa te bloqueou…</p>
+                <p>Não importa se ela está com outra pessoa…</p>
+                <p>Não importa se ela jura que nunca vai voltar…</p>
             </div>
-            <p>Porque cada Passagem Sagrada desperta algo primitivo na alma de um homem…</p>
+            <p>Porque cada Passagem Sagrada desperta algo primitivo na alma de uma pessoa…</p>
             <p>…O que fará a conexão que é óbvia para você…</p>
-            <p>…Impossível para ELE negar…</p>
-            <p>E quando essas palavras tomarem conta, ele não terá escolha a não ser voltar…</p>
-            <p className="text-xl font-bold text-purple-300">Porque Uma Vez Que A Passagem Sagrada É Falada, Nenhuma Outra Mulher Jamais Se Comparará A Você</p>
+            <p>…Impossível para ELA negar…</p>
+            <p>E quando essas palavras tomarem conta, essa pessoa não terá escolha a não ser voltar…</p>
+            <p className="text-xl font-bold text-purple-300">Porque Uma Vez Que A Passagem Sagrada É FALADA, Nenhuma Outra Pessoa Jamais Se Comparará A Você</p>
         </section>
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300 mt-12">
             <p>E quanto a quanto esse poder vai custar…</p>
             <p>Bem, não vai custar nada…</p>
-            <p>Mas vai ajudar você a GANHAR controle completo sobre o homem que escolher.</p>
+            <p>Mas vai ajudar você a GANHAR controle completo sobre a pessoa que escolher.</p>
             <p>E Madame Alaia não está aqui para ganhar dinheiro.</p>
-            <p>O único objetivo dela é ajudar 3.333 mulheres a reivindicar seu poder legítimo antes que esse conhecimento se perca para sempre.</p>
+            <p>O único objetivo dela é ajudar 3.333 pessoas a reivindicarem esse poder antes que esse conhecimento se perca para sempre.</p>
         </section>
 
         <h3 className="text-xl md:text-2xl font-bold text-white mt-10 mb-4">Ela Originalmente Queria Dar Essas Passagens De Graça</h3>
@@ -338,10 +343,10 @@ const App: React.FC = () => {
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
             <p>Mas eu tive que lembrá-la de que precisamos manter este site…</p>
             <p>Então concordamos com um valor que mal nos permite empatar.</p>
-            <p>Dessa forma, até mulheres que estão passando por dificuldades…</p>
-            <p>Até mulheres que foram deixadas para trás…</p>
-            <p>Até mulheres que foram substituídas por alguém mais jovem…</p>
-            <p>Podem experimentar o poder de ter aquela pessoa especial absolutamente obcecada por elas para sempre.</p>
+            <p>Dessa forma, até pessoas que estão passando por dificuldades…</p>
+            <p>Até pessoas que foram deixadas para trás…</p>
+            <p>Até pessoas que foram substituídas por outra pessoa…</p>
+            <p>Podem experimentar o poder de ter aquela pessoa especial absolutamente OBCECADA a elas para sempre.</p>
         </section>
 
         <div className="bg-gradient-to-br from-purple-900 to-indigo-900 border border-purple-500 rounded-xl p-8 my-10 shadow-2xl text-center">
@@ -349,10 +354,10 @@ const App: React.FC = () => {
             <p className="text-lg text-white font-medium">…Você pode receber sua Passagem Sagrada única.</p>
             <p className="text-lg text-white font-medium mb-8">…E ter controle permanente sobre o coração dele.</p>
 
-            <h4 className="text-xl font-bold text-amber-400 mb-4">Tão Poucas Mulheres Alguma Vez Têm Esse Tipo De Poder</h4>
+            <h4 className="text-xl font-bold text-amber-400 mb-4">Tão Poucas Pessoas Alguma Vez Têm Esse Tipo De Poder</h4>
             <p className="text-gray-300 mb-2">Mas isso não está disponível para todo mundo…</p>
             <p className="text-gray-300 mb-6">Porque essas passagens são PODEROSAS & PERMANENTES…</p>
-            <p className="text-gray-300 mb-6">…Então elas só estão disponíveis para mulheres que concordam com estas condições:</p>
+            <p className="text-gray-300 mb-6">…Então elas só estão disponíveis para pessoas que concordam com estas condições:</p>
 
             <ul className="text-left space-y-3 max-w-md mx-auto mb-8">
                 <li className="flex items-start gap-3">
@@ -369,20 +374,22 @@ const App: React.FC = () => {
                 </li>
             </ul>
 
-            <p className="mb-6 font-semibold">Se você concorda com essas condições, e está pronta para reivindicar esse poder…</p>
+            <p className="mb-6 font-semibold">Se você concorda com essas condições, e está pronto(a) para reivindicar esse poder…</p>
             <p className="mb-4">Clique no botão “Receber Minha Passagem” abaixo</p>
 
             <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </div>
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
-            <p>A partir daí, você será levada para um formulário de pedido seguro…</p>
+            <p>A partir daí, você será levado(a) para um formulário de pedido seguro…</p>
             <p>Isso ajuda a manter nossa conexão com Madame Alaia.</p>
             <p>Depois de completar isso…</p>
             <p>Você responderá a algumas perguntas simples.</p>
             <p>Isso ajuda Madame Alaia a ver sua situação única e escolher sua passagem exata.</p>
+            <p>Após isso, Madame Alaia irá realizar pessoalmente o feitiço para o seu caso.</p>
+            <p>A sua Passagem Sagrada será enviada diretamente para o e-mail de cadastro.</p>
             <p>Depois de completar tudo isso…</p>
-            <p>… Sua Passagem Sagrada será revelada dentro de 24–48 horas.</p>
+            <p>…Sua Passagem Sagrada será revelada dentro de 24–48 horas.</p>
             <p>E apenas alguns dias a partir de agora…</p>
         </section>
 
@@ -391,16 +398,16 @@ const App: React.FC = () => {
         <section className="space-y-6 text-lg leading-relaxed text-gray-300 text-center">
             <p>Porque este foi o momento em que tudo mudou…</p>
             <p>O dia em que você ganhou verdadeiro poder…</p>
-            <p>O dia em que ele finalmente percebeu…</p>
-            <p className="font-bold text-purple-300 text-xl">Você possui a alma dele…</p>
+            <p>O dia em que aquela pessoa finalmente percebeu…</p>
+            <p className="font-bold text-purple-300 text-xl">VOCÊ POSSUI A ALMA DA PESSOA</p>
             
-            <p className="mt-8">Receba sua Passagem Sagrada aqui:</p>
+            <p className="mt-8">Receba Sua Passagem Sagrada aqui:</p>
             
             <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </section>
 
         <section className="mt-16 mb-12">
-            <h3 className="text-xl font-bold text-white text-center mb-6">Dê uma olhada no que outras pessoas estão dizendo sobre o trabalho de Madame Alaia:</h3>
+            <h3 className="text-xl font-bold text-white text-center mb-6">Dê Uma Olhada No Que Outras Pessoas Estão Dizendo Sobre O Trabalho De Madame Alaia:</h3>
             <TestimonialCarousel />
             <div className="text-center mt-8 italic text-amber-200 text-lg">
                 “O poder é real. E uma vez que ele toma conta… não há como voltar.”
@@ -452,10 +459,10 @@ const App: React.FC = () => {
 
         <section className="space-y-6 text-lg leading-relaxed text-gray-300">
             <p>Mas eu preciso avisar: Esta oferta para receber sua Passagem Sagrada por apenas <span className="text-green-500 font-bold">R$ 41,41</span> não vai durar.</p>
-            <p>Madame Alaia só pode ajudar 3.333 mulheres antes que esse conhecimento se perca para sempre. E as vagas estão se esgotando rapidamente.</p>
+            <p>Madame Alaia só pode ajudar 3.333 pessoas antes que esse conhecimento se perca para sempre. E as vagas estão se esgotando rapidamente.</p>
             <p>Não perca sua chance de reivindicar esse poder enquanto ainda está disponível.</p>
-            <p>Se você está cansada de ser bloqueada, ignorada ou substituída — agora é a hora de agir. Tome controle do coração dele para sempre.</p>
-            <p>Não apenas fazendo ele voltar — mas tornando impossível que ele vá embora novamente.</p>
+            <p>Se você está cansado(a) de ser bloqueado(a), ignorado(a) ou substituído(a) ou está procurando um novo amor — agora é a hora de agir. Tome controle dessa conexão para sempre.</p>
+            <p>Não apenas fazendo essa pessoa voltar — mas tornando impossível que ela vá embora novamente.</p>
             
             <CTAButton mainText="Receber Minha Passagem Sagrada Agora" subText="Funciona Ainda Hoje À Noite" onClick={handleOpenPassage} />
         </section>

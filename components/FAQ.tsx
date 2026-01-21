@@ -40,23 +40,23 @@ export const FAQ: React.FC = () => {
   const faqs = [
     {
       question: "Como a Passagem Sagrada funciona?",
-      answer: "Depois de fazer o pedido, você compartilhará detalhes sobre sua situação e sobre o homem que deseja reivindicar. Dentro de 24–48 horas, Madame Alaia revelará sua Passagem Sagrada única, escolhida especificamente para suas circunstâncias."
+      answer: "Depois de fazer o pedido, você compartilhará detalhes sobre sua situação e sobre a pessoa que deseja reivindicar. Dentro de 24–48 horas, Madame Alaia revelará sua Passagem Sagrada única, escolhida especificamente para suas circunstâncias."
     },
     {
       question: "O que torna isso diferente dos outros?",
-      answer: "Ao contrário de técnicas de manifestação ou atração, sua Passagem Sagrada não tenta mudar a mente dele. Ela desperta algo mais profundo — uma obsessão que sempre esteve ali, esperando para ser ativada."
+      answer: "Ao contrário de técnicas de manifestação ou atração, sua Passagem Sagrada não tenta mudar a mente da pessoa. Ela desperta algo mais profundo — uma obsessão que sempre esteve ali, esperando para ser ativada."
     },
     {
       question: "Quão poderosas são essas passagens?",
-      answer: "Cada Passagem Sagrada foi passada por gerações de encantadoras bascas. Elas funcionam mesmo que ele tenha te bloqueado, escolhido outra mulher ou jurado nunca voltar."
+      answer: "Cada Passagem Sagrada foi passada por gerações de encantadoras bascas. Elas funcionam mesmo que a pessoa tenha te bloqueado, escolhido outra pessoa ou jurado nunca voltar."
     },
     {
-      question: "Isso funciona se ele estiver com outra pessoa?",
-      answer: "Sim. Sua Passagem Sagrada funciona em um nível primal. Muitas mulheres relatam que seus homens deixaram novos relacionamentos poucos dias depois de falar sua Passagem."
+      question: "Isso funciona se ele(a) estiver com outra pessoa?",
+      answer: "Sim. Sua Passagem Sagrada funciona em um nível primal. Muitas pessoas relatam que seus amores deixaram novos relacionamentos poucos dias depois de falar sua Passagem."
     },
     {
       question: "Que informações vocês precisam de mim?",
-      answer: "Quanto mais você compartilhar sobre sua situação, mais precisamente Madame Alaia poderá escolher suas palavras. No mínimo, precisamos do nome dele e detalhes sobre suas circunstâncias."
+      answer: "Quanto mais você compartilhar sobre sua situação, mais precisamente Madame Alaia poderá escolher suas palavras. No mínimo, precisamos do nome da pessoa e detalhes sobre suas circunstâncias."
     }
   ];
 

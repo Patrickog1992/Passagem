@@ -153,12 +153,12 @@ export const CommitmentModal: React.FC<CommitmentModalProps> = ({ isOpen, onClos
                 </div>
 
                 <div>
-                  <label className="block text-base font-bold text-purple-300 mb-2">O nome dele</label>
+                  <label className="block text-base font-bold text-purple-300 mb-2">Nome da Pessoa (ou Alvo)</label>
                   <input 
                     type="text" 
                     value={hisName}
                     onChange={(e) => setHisName(e.target.value)}
-                    placeholder="Nome dele..."
+                    placeholder="Nome da pessoa..."
                     className="w-full bg-gray-900 border border-purple-500/50 rounded-lg p-4 text-white text-lg placeholder-gray-600 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all shadow-inner"
                   />
                 </div>
